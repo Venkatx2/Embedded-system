@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+#define EEPROM_SIZE 10
+
+int EEPROM[EEPROM_SIZE];
+int address = 0;
+
+// Write data into EEPROM
+void EEPROM_Write(int data)
+{
+    if(address < EEPROM_SIZE)
+    {
+        EEPROM[address++] = data;
+    }
+    else
+    {
+        printf("EEPROM Memory Full\n");
+    }
+}
+
+// Read EEPROM
+void EEPROM_Read()
+{
+    int i;
+
+    printf("Logged Data:\n");
+
+    for(i = 0; i < address; i++)
+    {
+        printf("%d\n", EEPROM[i]);
+    }
+}
+
+int main()
+{
+    EEPROM_Write(100);
+    EEPROM_Write(200);
+    EEPROM_Write(300);
+    EEPROM_Write(400);
+
+    EEPROM_Read();
+
+    return 0;
+}

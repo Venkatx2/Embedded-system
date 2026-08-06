@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+// Temperature Sensor
+int TemperatureSensor()
+{
+    return 30;
+}
+
+// Humidity Sensor
+int HumiditySensor()
+{
+    return 65;
+}
+
+// Light Sensor
+int LightSensor()
+{
+    return 800;
+}
+
+int main()
+{
+    int temperature, humidity, light;
+
+    temperature = TemperatureSensor();
+    humidity = HumiditySensor();
+    light = LightSensor();
+
+    printf("Multi Sensor System\n");
+    printf("-------------------\n");
+    printf("Temperature : %d C\n", temperature);
+    printf("Humidity    : %d %%\n", humidity);
+    printf("Light       : %d Lux\n", light);
+
+    return 0;
+}
